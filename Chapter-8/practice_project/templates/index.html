@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>{{title}}</title>
+    </head>
+    <body>
+        <h1>{{header}}</h1>
+
+        {% for course in course_list %}
+        <div> {{forloop.counter}} {{course}} </div>
+        {% endfor %}
+
+        <br/>
+        <table border = "1" cellpadding = "10">
+            <tr>
+                <th> Name </th>
+                <th> Phone Number </th>
+            </tr>
+
+            {% for key in student_details %}
+            <tr>
+                <td> {{key.Name}} </td>
+                <td> {{key.Phone}} </td>
+            </tr>
+            {% endfor %}
+
+        </table>
+
+        {% if Numbers|length > 0 %}
+            {% for num in Numbers %}
+                {% if num > 20 and num < 70 %}
+                    <div> {{num}} </div>
+                {% endif %}
+            {% endfor %}
+        {% else %}
+            No Data Found
+        {% endif %}
+            
+    </body>
+</html>
