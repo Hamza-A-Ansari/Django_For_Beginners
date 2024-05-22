@@ -1,0 +1,13 @@
+<base href="/">
+<link rel="stylesheet" type="text/css" href="static/css/h_style.css">
+        <div class="header">
+            <a href="#default" class="logo">CompanyLogo</a>
+            <div class="header-right">
+              {% url "home" as h %}
+              <a class="{% if request.path == h %} active {% endif %}" href="{{ h }}">Home</a>
+              {% url "contact" as c %}
+              <a class="{% if request.path == c %} active {% endif %}" href="{{ c }}">Contact</a>
+              {% url "about" as a %}
+              <a class="{% if request.path == a %} active {% endif %}" href="{{ a }}">About</a>
+            </div>
+        </div>
