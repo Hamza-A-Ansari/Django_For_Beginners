@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+
+<html>
+    <head>
+
+    </head>
+<body>
+    <link rel="stylesheet" type="text/css" href="static/css/form_style.css">
+  <div class="main-block">
+    <h1>Registration</h1>
+    <form method="POST" action="{% url 'submit' %}">
+      {% csrf_token %}
+      <label id="icon" for="email"><i class="fas fa-envelope"></i></label>
+      <input type="text" name="email" id="name" placeholder="Email" required/>
+      <label id="icon" for="name"><i class="fas fa-user"></i></label>
+      <input type="text" name="name" id="name" placeholder="Name" required/>
+      <label id="icon" for="password"><i class="fas fa-unlock-alt"></i></label>
+      <input type="password" name="password" id="name" placeholder="Password" required/>
+      <input type="text" value="{{ password }}" placeholder="Output of your pass"/>
+      <div class="btn-block">
+        <button type="submit" href="/">Submit</button>
+      </div>
+    </form>
+  </div>
+  {% endblock %}
+</body>
+</html>
